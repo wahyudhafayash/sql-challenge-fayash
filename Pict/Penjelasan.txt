@@ -1,0 +1,66 @@
+Nomor 1. 
+?Dapatkan semua siswa yang berusia 15 tahun.
+=(SELECT nama, age FROM students_data WHERE age = 15;)
+=Menggunakan (SELECT nama, age FROM students_data) untuk mendapatkan kolom nama dan usia siswa dan menggunakan 
+ (WHERE age = 15) untuk memfilter data siswa agar menampilkan hanya siswa yang berusia 15 Tahun
+
+Nomor 2.
+?Dapatkan nama dan nilai ujian semua siswa dari kelas '9B'.
+=(SELECT nama, exam_score, class FROM students_data WHERE class = '9B')
+=Menggunakan (SELECT nama, exam_score, class FROM students_data) untuk menampilkan hanya kolom nama, exam_score
+ dan kelas pada tabel students_data, dan menggunakan (WHERE class = '9B') untuk menampilkan seluruh siswa yang
+ berada di kelas/kolum 9B, sehingga hasil akhir akan menampilkan nama, nilai, dan kelas seluruh kelas 9B
+
+Nomor 3.
+?Dapatkan semua siswa, diurutkan berdasarkan nilai ujian dari yang tertinggi ke terendah.
+=(SELECT nama, exam_score FROM students_data ORDER BY exam_score DESC)
+=Menggunakan (SELECT nama, exam_score FROM students_data) untuk mendapatkan semua data siswa dan menggunakan (ORDER BY exam_score)
+ untuk mengelompokkan kolom exam_score dan gunakan (DESC) untuk mengurutkan nilai exam dari yang tertinggi ke terendah.
+
+Nomor 4.
+?Hitung jumlah siswa di setiap kelas.
+=(SELECT class, count(*) FROM students_data GROUP BY class)
+=Menggunakan (SELECT class, count(*) FROM students_data) untuk menampilkan data kelas dan menggunakan (count(*))
+ untuk menghitung jumlah siswa setiap kelasnya dan menggunakan (GROUP BY class) untuk mengelompokan kolom yang sama
+
+Nomor 5.
+?Dapatkan rata-rata nilai ujian untuk setiap kelas yang memiliki lebih dari 2 siswa.
+=(SELECT class, avg(exam_score) FROM students_data GROUP by class LIMIT 2)
+=menggunakan (SELECT class, avg(exam_score)) untuk menampilkan kolom kelas dan nilai exam yang sudah di dirata"kan
+ dan menggunakan (GROUP BY class) untuk mengelompokan kolom kelas yang sama serta menggunakan (LIMIT 2) untuk 
+ membatasi hanya menampilkan 2 data
+
+Nomor 6.
+?Dapatkan semua kelas yang unik dalam database.
+=(SELECT class FROM students_data GROUP BY class HAVING count(*) = 1)
+=Menggunakan (SELECT class) untuk menampilkan kolom kelas pada tabel students_data dan menggunakan (GROUP BY class)
+ untuk mengelompokan kolom yang sama serta menggunakan (HAVING COUNT(*)1) dan di filter menggunakan having untuk
+ menampilkan jumlah kelas yang hanya memiliki 1 siswa
+
+Nomor 7.
+?Dapatkan 5 siswa pertama yang mendaftar, diurutkan berdasarkan tanggal pendaftaran.
+=(SELECT nama, enrollment_date FROM students_data ORDER BY enrollment_date ASC LIMIT 5)
+=Menggunakan (SELECT nama, enrollment_date FROM) untuk mendapatkan kolom nama dan enrollment_date dan menggunakan
+ (ORDER BY) untuk mengelompokan enrollment_date juga memakai (ASC LIMIT 5) untuk mengurutkan tanggal dari yang tercepat serta melimit agar data hanya menampilkan
+ sebanyak 5 data
+
+Nomor 8.
+?Dapatkan nama dan nilai ujian siswa yang memiliki nilai lebih dari 80 dan berusia di atas 14 tahun.
+=(SELECT nama, age, exam_score FROM students_data WHERE exam_score > 80 AND age > 14)
+=Menggunakan (SELECT nama, age, exam_score FROM) untuk mendapatkan kolom nama,age,exam_score dan menggunakan
+ (WHERE exam_score > 80 AND age > 14) untuk menfilter agar hanya menampilkan nilai exam diatas 80 dan age diatas 14 tahun
+
+Nomor 9. 
+?Dapatkan rata-rata nilai ujian semua siswa yang berusia 16 tahun.
+=(SELECT age, avg(exam_score) FROM students_data WHERE age = 16 GROUP BY age)
+=Menggunakan (SELECT age , avg(exam_score)) untuk menampilkan kolom age dan nilai yang sudah dirata"kan dan menggunakan
+ (WHERE age = 16) untuk mengambil data siswa yang berumur 16 serta menggunakan (GROUP BY age) untuk mengelompokan kolom yang sama
+
+Nomor 10.
+?Dapatkan nama siswa yang memiliki nilai ujian tertinggi di kelas '8A'.
+=(SELECT nama, class, exam_score FROM students_data WHERE  class = '8A' ORDER BY exam_score DESC LIMIT 1) 
+=Menggunakan (SELECT nama, siswa, exam_score) untuk menampikan kolom nama, siswa, nilai exam dan menggunakan (WHERE
+ class = '8A') untuk menfilter hanya menampilkan kelas 8A serta menggunakan (ORDER BY exam_score DESC LIMIT 1)
+ untuk mengelompokan kolom yang sama dan nilai di urutkan berdasarkan nilai tertinggi dan li batasi hanya menampilkan 
+ 1 data
+
